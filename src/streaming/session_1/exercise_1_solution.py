@@ -78,7 +78,7 @@ def foreach_batch_function(batch_df, epoch_id):
 
     # agg_df = (spark.read.format("parquet")
     #           .schema(AGG_SCHEMA)
-    #           .load("/data/exercise_1"))
+    #           .load("/data/userdata"))
 
     # appended_df = (agg_df.union(batch_df)
     #                .groupBy("country")
