@@ -21,6 +21,14 @@ class CustomStreamingQueryListener(StreamingQueryListener):
         workspace_id = os.environ['LOG_ANALYTICS_WORKSPACE_ID']
         workspace_key = os.environ['LOG_ANALYTICS_WORKSPACE_KEY']
 
+        """
+        You can filter which event information to send to 
+        Azure Log Analytics Workspace.
+
+        The log type is a custom name you can set as you like.
+        More info about Data Collector API (Log Analytics) here:
+        https://learn.microsoft.com/en-us/azure/azure-monitor/logs/data-collector-api
+        """
         body = json.dumps(event)
         log_type = 'PysparkStreamLogging'
 
