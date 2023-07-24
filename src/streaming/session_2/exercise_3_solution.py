@@ -35,6 +35,7 @@ SINK_PATH = "/data/exercise_3"
 spark = (SparkSession.builder.appName("exercise_3")
          .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
          .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
+         .config("spark.databricks.delta.properties.defaults.enableChangeDataFeed", True)
          .getOrCreate())
 
 spark.sparkContext.setLogLevel("WARN")
@@ -46,7 +47,6 @@ df = (spark.readStream.format("kafka")
       .load())
 
 # Solutions:
-
 
 def process_batch(spark_session: SparkSession, new_data: DataFrame):
     new_data.show()

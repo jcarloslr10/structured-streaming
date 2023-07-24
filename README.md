@@ -198,3 +198,14 @@ Connect to Spark container terminal:
 
 Run the job:
 `spark-submit --master spark://spark:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0,io.delta:delta-core_2.12:2.3.0 /src/streaming/session_2/exercise_3.py`
+
+### Exercise 4.
+
+* Run the streaming job of the exercise 3.
+
+* Run concurrently a streaming job recording the table changes of the exercise 3 using the CDF in streaming mode and print each change to the console.
+
+* Enable CDF in the code of the exercise 3.
+
+Run the job:
+`spark-submit --master spark://spark:7077 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.3.0,io.delta:delta-core_2.12:2.3.0 /src/streaming/session_2/exercise_4.py`
